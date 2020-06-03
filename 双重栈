@@ -1,0 +1,53 @@
+arr = [0]*100
+l_top = -1
+r_top =len(arr)
+def l_push(x):
+  if r_top - l_top == 1:
+    print("栈满，无法插入")
+    exit()
+  else:
+    arr[++l_top] = x
+    
+def l_pop():
+  if l_top == 0:
+    print("左栈空")
+    exit()
+  else:
+    x = arr[l_top]
+    l_top--
+    return x
+
+def r_push(x):
+  if r_top - l_top == 1:
+    print("栈满，无法插入")
+    exit()
+  else:
+    arr[--r_top] = x
+    
+def r_pop():
+  if r_top == len(arr):
+     print("右栈空")
+     exit()
+  else:
+     x = arr[r_top]
+     r_top++
+     return x
+     
+l_push(6)
+l_push(87)
+x1 = l_pop()
+x2 = l_pop()
+print(x1,x2)
+
+r_push(34)
+r_push(57)
+x3 = r_pop()
+x4 = r_pop()
+print(x1,x2)
+     
+     
+  
+  
+  
+  
+  
