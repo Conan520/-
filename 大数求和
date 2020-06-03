@@ -1,0 +1,27 @@
+def addition(x1, x2):
+    len1 = len(x1)
+    len2 = len(x2)
+    len3 = max(len1, len2)
+    print(len3)
+    x1 = x1[::-1]
+    x2 = x2[::-1]
+    if len1 > len2:
+        x2 = x2 + '0'*(len1-len2)
+    else:
+        x1 = x1 + '0'*(len2-len1)
+    sum = list(x1)
+    for i in range(len3):
+        sum[i] = int(sum[i]) + int(x2[i])
+        if sum[i] > 9:
+            sum[i] -= 10
+            sum[i+1] = int(sum[i+1])+1
+    sum = sum[::-1]
+    return sum
+
+
+if __name__ == "__main__":
+    a = input("请输入第一个大数：")
+    b = input("请输入第二个大数：")
+    sum1 = addition(a, b)
+    sum2 =''.join([str(i) for i in sum1])
+    print(sum2)
