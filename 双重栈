@@ -9,7 +9,7 @@ def l_push(x):
     arr[++l_top] = x
     
 def l_pop():
-  if l_top == 0:
+  if l_top == -1:
     print("左栈空")
     exit()
   else:
